@@ -1,0 +1,14 @@
+[Unit]
+Description=Club Backend
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/opt/club/backend
+ExecStart=/usr/bin/java -jar /opt/club/backend/backend.jar
+SuccessExitStatus=143
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
